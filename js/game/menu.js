@@ -12,18 +12,18 @@ function Start(){
 
 	//////////////////////////////
 
-	N("<b>COMING OUT SIMULATOR 2014</b>");
-	N("A half-true game about half-truths.");
-	N("Hey there, player. Welcome to this game, I guess.");
-	N("What would you like to do now?");
+	N("<b>СИМУЛЯТОР КАМИНГ АУТА 2014</b>");
+	N("Полу-игра о полу-правде.");
+	N("Эй, игрок. Добро пожаловать в эту игру, наверно.");
+	N("Что бы ты хотел сейчас сделать?");
 
 	Choose({
-		"Let's play this thing!": Play,
-		"Who are you? (Credits)": function(){
-			Credits("Who are you?");
+		"Давайте поиграем в это!": Play,
+		"Кто ты? (Авторы)": function(){
+			Credits("Кто ты?");
 		},
-		"Hm, tell me more. (About This Game)": function(){
-			About("Hm, tell me more.");
+		"Хм, расскажи мне больше. (Об Этой Игре)": function(){
+			About("Хм, расскажи мне больше.");
 		}
 	});
 
@@ -44,56 +44,56 @@ function Play(message){
 
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
-		N("Jumping right into it! Great!");
-		N("No messing around with reading the Credits or the About This Game sections or--");
-		p("Shush.");
-		N("Fine, fine.");
+		N("Сразу погружаешься в игру! Отлично!");
+		N("Даже не возишься с тем чтобы прочитать диалоги Об Авторе или Об Этой Игре или--");
+		p("Шшш--!");
+		N("Хорошо, хорошо.");
 	}
 	// Asked both
 	if($.asked_about && $.asked_credits){
 		p(". . .");
-		p("Why did you make that a clickable option, when it was the only option left.");
-		N("NO IDEA");
+		p("Почему ты тут сделал выбор с одним вариантом?");
+		N("БЕЗ ПОНЯТИЯ");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
-		N("Yes, let's!");
+		N("Да, давайте!");
 	}
 
-	N("Let's travel back four years ago, to 2010...");
-	p("That was FOUR years ago?!");
-	N("...to the evening that changed my life forever.");
+	N("Давайте перенесёмся из 2014 на четыре года назад, в 2010...");
+	p("Это было ЧЕТЫРЕ года назад?!");
+	N("...в тот вечер что изменил мою жизнь навсегда.");
 
-	N("Tell me, dear player, how do you think this all ends?");
+	N("Скажи мне, дорогой игрок, как ты думаешь чем это закончится?");
 
 	Choose({
-		"With flowers and rainbows and gay unicorns?": function(message){
+		"Цветами, радугой и гей-единорогами?": function(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
-			N("Yes. That is exactly how this game ends.");
-			p("Really?");
-			N("No.");
+			N("Да. Именно так игра и закончится.");
+			p("Серьёзно?");
+			N("Нет.");
 			Play_2();
 		},
-		"Apparently, with you redditing at Starbucks.": function(message){
+		"Возможно тем что ты залипаешь в соцсетях в Старбаксе.": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
-			N("Hey, I'm coding on this laptop. Turning my coming-of-age story into the game you're playing right now.");
-			p("Naw, you're probably procrastinating.");
-			N("Look who's talking.");
-			p("Touché, douché.");
-			N("Anyway...");
+			N("Эй, я пишу код на этом ноутбуке. Превращаю мою историю взросления в игру в которую ты играешь сейчас.");
+			p("Не, ты похоже прокрастинируешь.");
+			N("Кто бы говорил.");
+			p("Справедливое замечание.");
+			N("Тем не менее...");
 			Play_2();
 		},
-		"IT ALL ENDS IN BLOOD": function(message){
+		"ВСЁ ЗАКОНЧИТСЯ В КРОВИ": function(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Uh, compared to that, I guess my story isn't that tragic.");
-			N("Although that's kind of a glass one-hundredths-full interpretation.");
-			p("blooooood.");
-			N("Anyway...");
+			N("Эм, по сравнению с этим, я полагаю моя история не настолько трагична.");
+			N("Это своего рода сотая переинтерпретация через призму моего текущего опыта.");
+			p("крооооовь.");
+			N("И так...");
 			Play_2();
 		}
 	});
@@ -103,12 +103,12 @@ function Play(message){
 function Play_2(){
 
 	if(!$.asked_about){
-		N("If you didn't skip the About This Game section, you'd know this is a very personal story.");
-		p("Shush.");
+		N("Если ты не пропускал диалоги Об Этой Игре, то ты уже знаешь что это моя очень личная история.");
+		p("Шшш!");
 	}
 
-	N("This game includes dialogue that I, my parents, and my ex-boyfriend actually said.");
-	N("As well as all the things we could have, should have, and never would have said.");
+	N("Эта игра включает диалоги что мой бывший парень, я, и мои родители говорили на самом деле.");
+	N("А также всё что мы могли, должны были, и никогда бы не говорили.");
 	N("It doesn't matter which is which.");
 	N("Not anymore.");
 
@@ -129,7 +129,7 @@ function Play_2(){
 			p("So that's a yes.");
 			Play_3();
 		},
-		"This 'true' game is full of lies?": function(message){
+		"Эта 'правдивая' игра из  is full of lies?": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
@@ -201,18 +201,18 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Who are you?");
+		SipCoffee("Кто ты?");
 	}
 	
-	N("Ah, how rude of me! Let me introduce myself.");
-	N("Hi, I'm Nicky Case.");
-	N("That's not my legal name, it's just my REAL name.");
+	N("Ах, как грубо с моей стороны! Позвольте представиться.");
+	N("Привет, я Ники Кейс.");
+	N("Это не моё имя с рождения, это моё РЕАЛЬНОЕ имя.");
 
-	p("That's totes weird, dude.");
+	p("Ну ты и чудак.");
 	if($.asked_about){
 		p("And like you just told me, this is your personal story?");
 	}else{
-		p("And you made this game?");
+		p("И ты сделал эту игру?");
 	}
 
 	N("Yep, I am the sole writer / programmer / artist of Coming Out Simulator 2014.");
